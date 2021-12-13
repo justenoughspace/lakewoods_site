@@ -1,66 +1,61 @@
 <template>
-  <div class="container main">
+  <div class="container main mt-5">
     <div class="upcoming-show row" style="justify-content: center">
       <img
-        class="col-lg-6 col-sm-10 show-flyer"
-        src="@/assets/cd_release.jpg"
+        class="col-lg-6 col-sm-10 album-cover"
+        src="@/assets/debut_cover.jpg"
       />
-      <div class="col-6 mb-4">
-        <div class="text-wrapper border sm-breakpoint">
-          <h1 class="col-12 title">CD Release Show - Get Tickets Now</h1>
-          <h2 class="col-12 subtitle">White Rabbit Cabaret - December 11</h2>
-        </div>
-        <div class="col-12 mt-5 row" style="justify-content: center">
-          <button class="col-lg-12 col-sm-8 lakewoods-button">
+      <div class="col-lg-6 col-sm-10">
+        <div class="text-wrapper border">
+          <h1 class="col-12 title">The Lakewoods - Out Now</h1>
+          <h2 class="col-12 subtitle">
+            Get a CD, cassette, or digital copy today!
+          </h2>
+          <ul class="col-12 track-list" style="padding-left: 0">
+            <li>World Full of Lovers 3:13</li>
+            <li>The Means to Break Your Heart 5:56</li>
+            <li>Once You Leave 6:57</li>
+            <li>I'm Not the One 2:41</li>
+            <li>All I Need is You 5:16</li>
+            <li>Hard For Me to Say 4:20</li>
+            <li>Don't Turn Out the Lights 3:59</li>
+            <li>Save My Love 5:22</li>
+            <li>Down and Lonely 4:14</li>
+            <li>Road to Nowhere 5:23</li>
+            <li>The Last Lonely Man 5:03</li>
+            <li>Into the Fire 5:24</li>
+          </ul>
+          <button
+            class="col-lg-12 col-sm-8 lakewoods-button"
+            style="margin-top: 30px"
+          >
             <a
               href="https://www.eventbrite.com/e/the-lakewoods-album-release-with-the-frog-brothers-and-j-elliott-tickets-209969553587"
               target="_blank"
               style="text-decoration: none; color: #ffffff"
-              >Buy tickets</a
-            >
-          </button>
-          <button class="col-lg-12 col-sm-8 lakewoods-button mb-4">
-            <a
-              href="https://thelakewoods.bandcamp.com/"
-              target="_blank"
-              style="text-decoration: none; color: #ffffff"
-              >Pre-order album</a
+              >Order Album</a
             >
           </button>
         </div>
-        <div></div>
       </div>
     </div>
-    <div class="row" style="justify-content: center">
-      <div class="col-6"></div>
-      <anderson-player class="col-6" />
-    </div>
-
-    <!-- <div class="text-wrapper border mt-5">
-      <h1 class="col-12 title">Live in Anderson - Out Now</h1>
-    </div>
-
-    <img
-      class="col-6 mx-auto d-block album-image my-5"
-      src="@/assets/live-in-anderson.jpg"
-    /> -->
   </div>
 </template>
 
 <script>
-import AndersonPlayer from "@/components/AndersonPlayer.vue";
+// import AndersonPlayer from "@/components/AndersonPlayer.vue";
 
 export default {
-  components: {
-    AndersonPlayer: AndersonPlayer,
-  },
+  // components: {
+  //   AndersonPlayer: AndersonPlayer,
+  // },
 };
 </script>
 
 <style scoped>
 .main {
   text-align: center;
-  margin-top: 2rem;
+
   color: #ffffff;
 }
 
@@ -75,20 +70,22 @@ export default {
 }
 
 .subtitle {
-  margin-top: 2rem;
   font-size: 1.2em;
 }
 
-.show-flyer:hover {
+.album-cover {
+  max-height: 550px;
+}
+.album-cover:hover {
   box-shadow: 0 0 10px;
-  opacity: 90%;
+  cursor: pointer;
 }
 
 .lakewoods-button {
   border-radius: 20px;
   width: 275px;
   height: 40px;
-  background-color: transparent;
+  background-color: rgb(231, 112, 0);
   border: 2px solid #ffffff;
   color: #ffffff;
   margin: 10px 0px;
@@ -97,12 +94,13 @@ export default {
 }
 
 .lakewoods-button:hover {
-  background-color: rgb(231, 112, 0);
+  background-color: transparent;
 }
 
 .text-wrapper {
   background-color: rgba(17, 17, 17, 0.7);
   padding: 20px;
+  min-height: 550px;
 }
 
 @media (max-width: 1024px) {
@@ -138,5 +136,10 @@ export default {
 
 .border {
   border: 2px solid #ffffff;
+}
+
+.track-list {
+  list-style: none;
+  margin-top: 20px;
 }
 </style>

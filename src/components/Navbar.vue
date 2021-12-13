@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <div>
     <div class="header-section">
       <div class="row g-0" style="justify-content: center">
         <img
@@ -7,7 +7,7 @@
           src="@/assets/TopLogo.png"
           class="mt-3 col-5"
           style="height: 100%"
-          @click="woof"
+          @click="navigate('home')"
         />
       </div>
       <button class="hamburger-menu">
@@ -17,25 +17,42 @@
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav mx-auto">
             <li class="navbar-item">
-              <a href="#" class="nav-link" id="external-link">HOME</a>
+              <a class="nav-link" id="external-link" @click="navigate('home')"
+                >HOME</a
+              >
             </li>
             <li class="navbar-item">
-              <a class="nav-link" id="external-link" @click="woof">BIO</a>
+              <a class="nav-link" id="external-link" @click="navigate('bio')"
+                >BIO</a
+              >
             </li>
             <li class="navbar-item">
-              <a href="#" class="nav-link" id="external-link">SHOWS</a>
+              <a class="nav-link" id="external-link" @click="navigate('shows')"
+                >SHOWS</a
+              >
             </li>
             <li class="navbar-item">
-              <a href="#" class="nav-link" id="external-link">NEWS</a>
+              <a class="nav-link" id="external-link" @click="navigate('news')"
+                >NEWS</a
+              >
             </li>
             <li class="navbar-item">
-              <a href="#" class="nav-link" id="external-link">MUSIC</a>
+              <a class="nav-link" id="external-link" @click="navigate('music')"
+                >MUSIC</a
+              >
             </li>
             <li class="navbar-item">
-              <a href="#" class="nav-link" id="external-link">MERCH</a>
+              <a class="nav-link" id="external-link" @click="navigate('merch')"
+                >MERCH</a
+              >
             </li>
             <li class="navbar-item">
-              <a href="#" class="nav-link" id="external-link">CONTACT</a>
+              <a
+                class="nav-link"
+                id="external-link"
+                @click="navigate('contact')"
+                >CONTACT</a
+              >
             </li>
           </ul>
         </div>
@@ -60,7 +77,7 @@
       </div>
       <img id="rainbow" src="@/assets/Rainbow-band.png" />
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -76,8 +93,9 @@ export default {
     showMenu() {
       this.menu_open = !this.menu_open;
     },
-    woof() {
-      this.$router.push({ name: "bio" });
+    navigate(route) {
+      this.$router.push(`/${route}`);
+      console.log("route", `${route}`);
     },
   },
 };
@@ -103,6 +121,7 @@ export default {
 #logo {
   height: 150px;
   margin-bottom: 30px;
+  cursor: pointer;
 }
 
 @media (max-width: 1024px) {
@@ -114,6 +133,7 @@ export default {
   font-size: 24px;
   color: #ffffff;
   padding: 0px 30px;
+  cursor: pointer;
 }
 #rainbow {
   width: 100%;
