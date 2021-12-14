@@ -20,6 +20,9 @@ export default {
 </script>
 
 <style>
+html {
+  overflow-x: hidden;
+}
 body {
   font-family: futura-pt, sans-serif;
   font-weight: 700;

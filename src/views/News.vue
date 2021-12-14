@@ -1,5 +1,20 @@
 <template>
   <div>
-    <h1 style="color: #ffffff">Content coming soon</h1>
+    <n-banner :section="section" />
   </div>
 </template>
+
+<script>
+import Banner from "@/components/Banner.vue";
+
+export default {
+  components: {
+    NBanner: Banner,
+  },
+  data() {
+    return {
+      section: "NEWS",
+    };
+  },
+};
+</script>

@@ -129,13 +129,12 @@ export default {
   .hamburger-menu {
     display: none;
   }
-}
-
-@media (min-width: 992px) {
   .insta-icon {
-    display: none;
+    width: 60px;
+    height: 60px;
   }
 }
+
 .hamburger-menu {
   position: absolute;
   right: 10px;
@@ -147,16 +146,24 @@ export default {
 }
 .insta-icon {
   position: absolute;
-  left: 10px;
+  left: 30px;
   top: 35px;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
 }
 #logo {
   height: 150px;
   margin-bottom: 30px;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .insta-icon {
+    left: 10px;
+    width: 30px;
+    height: 30px;
+  }
 }
 
 @media (max-width: 1024px) {
