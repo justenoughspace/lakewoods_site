@@ -10,10 +10,18 @@
           @click="navigate('home')"
         />
       </div>
-      <button class="hamburger-menu">
-        <span class="navbar-toggler-icon" @click="showMenu"></span>
-      </button>
-      <nav class="navbar navbar-light navbar-expand-lg">
+      <img
+        src="@/assets/insta_rgb.png"
+        class="insta-icon"
+        @click="goToInsta()"
+      />
+      <img
+        src="@/assets/hamburger.svg"
+        class="hamburger-menu"
+        @click="showMenu()"
+      />
+
+      <nav class="navbar-expand-lg" style="margin-bottom: 10px">
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav mx-auto">
             <li class="navbar-item">
@@ -57,21 +65,25 @@
           </ul>
         </div>
       </nav>
-      <div v-if="menu_open" class="col-12-lg menu-mobile">
+      <div
+        v-if="menu_open"
+        class="col-12-lg menu-mobile"
+        style="text-align: center"
+      >
         <ul class="mobile-links" style="list-style: none">
-          <li class="mobile-link">Home</li>
+          <li class="mobile-link" @click="navigate('home')">Home</li>
           <hr />
-          <li class="mobile-link">Bio</li>
+          <li class="mobile-link" @click="navigate('bio')">Bio</li>
           <hr />
-          <li class="mobile-link">Shows</li>
+          <li class="mobile-link" @click="navigate('shows')">Shows</li>
           <hr />
-          <li class="mobile-link">News</li>
+          <li class="mobile-link" @click="navigate('news')">News</li>
           <hr />
-          <li class="mobile-link">Music</li>
+          <li class="mobile-link" @click="navigate('music')">Music</li>
           <hr />
-          <li class="mobile-link">Merch</li>
+          <li class="mobile-link" @click="navigate('merch')">Merch</li>
           <hr />
-          <li class="mobile-link">Contact</li>
+          <li class="mobile-link" @click="navigate('contact')">Contact</li>
           <hr />
         </ul>
       </div>
@@ -92,10 +104,15 @@ export default {
   methods: {
     showMenu() {
       this.menu_open = !this.menu_open;
+      console.log("this", this.menu_open);
     },
     navigate(route) {
       this.$router.push(`/${route}`);
       console.log("route", `${route}`);
+      this.menu_open = false;
+    },
+    goToInsta() {
+      window.open("http://www.instagram.com/the.lakewoods");
     },
   },
 };
@@ -113,10 +130,28 @@ export default {
     display: none;
   }
 }
+
+@media (min-width: 992px) {
+  .insta-icon {
+    display: none;
+  }
+}
 .hamburger-menu {
   position: absolute;
   right: 10px;
   top: 30px;
+
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.insta-icon {
+  position: absolute;
+  left: 10px;
+  top: 35px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
 }
 #logo {
   height: 150px;
@@ -141,5 +176,21 @@ export default {
 
 .navbar {
   background-color: rgb(23, 19, 19);
+}
+
+.mobile-link {
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+  padding: 5px 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.mobile-links {
+  padding-left: 0;
+}
+
+hr {
+  display: none;
 }
 </style>

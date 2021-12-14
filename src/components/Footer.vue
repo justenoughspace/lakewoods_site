@@ -26,6 +26,12 @@
   margin-top: 100px;
 }
 
+@media (max-width: 768px) {
+  .footer {
+    display: none;
+  }
+}
+
 .line {
   border-top: 3px solid #ffffff;
   padding-bottom: 13px;
@@ -36,7 +42,7 @@
   height: 60px;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .fixed-bottom-logo {
     height: 40px;
   }
@@ -53,5 +59,5 @@
     border-top: 2px solid #ffffff;
     padding-bottom: 6px;
   }
-}
+} */
 </style>

@@ -1,14 +1,15 @@
 <template>
-  <div class="container main mt-5">
+  <div class="container main">
     <div class="upcoming-show row" style="justify-content: center">
       <img
-        class="col-lg-6 col-sm-10 album-cover"
+        class="col-lg-6 col-sm-8 album-cover"
         src="@/assets/debut_cover.jpg"
+        @click="navigate()"
       />
       <div class="col-lg-6 col-sm-10">
         <div class="text-wrapper border">
           <h1 class="col-12 title">The Lakewoods - Out Now</h1>
-          <h2 class="col-12 subtitle">
+          <h2 class="col-12 subtitle" @click="navigate">
             Get a CD, cassette, or digital copy today!
           </h2>
           <ul class="col-12 track-list" style="padding-left: 0">
@@ -30,10 +31,10 @@
             style="margin-top: 30px"
           >
             <a
-              href="https://www.eventbrite.com/e/the-lakewoods-album-release-with-the-frog-brothers-and-j-elliott-tickets-209969553587"
+              href="https://thelakewoods.bandcamp.com/"
               target="_blank"
               style="text-decoration: none; color: #ffffff"
-              >Order Album</a
+              >Get a Copy</a
             >
           </button>
         </div>
@@ -46,17 +47,19 @@
 // import AndersonPlayer from "@/components/AndersonPlayer.vue";
 
 export default {
-  // components: {
-  //   AndersonPlayer: AndersonPlayer,
-  // },
+  methods: {
+    navigate() {
+      window.open("https://thelakewoods.bandcamp.com/");
+    },
+  },
 };
 </script>
 
 <style scoped>
 .main {
   text-align: center;
-
   color: #ffffff;
+  margin-top: 20px;
 }
 
 .album-image:hover {
@@ -73,6 +76,11 @@ export default {
   font-size: 1.2em;
 }
 
+.subtitle:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .album-cover {
   max-height: 550px;
 }
@@ -85,7 +93,7 @@ export default {
   border-radius: 20px;
   width: 275px;
   height: 40px;
-  background-color: rgb(231, 112, 0);
+  background-color: rgb(216, 104, 0);
   border: 2px solid #ffffff;
   color: #ffffff;
   margin: 10px 0px;
@@ -112,9 +120,7 @@ export default {
   }
   .text-wrapper {
     padding: 10px;
-  }
-  .sm-breakpoint {
-    display: none;
+    margin-top: 30px;
   }
 }
 @media (max-width: 768px) {
@@ -126,6 +132,12 @@ export default {
     font-size: 0.7em;
     margin-bottom: 20px;
     margin-top: 20px;
+  }
+  .track-list {
+    font-size: 12px;
+  }
+  .text-wrapper {
+    min-height: unset;
   }
 }
 
