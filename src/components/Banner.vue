@@ -58,7 +58,7 @@ export default {
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   display: flex;
   justify-content: center;
   opacity: 40%;

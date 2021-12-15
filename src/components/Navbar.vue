@@ -137,8 +137,8 @@ export default {
 
 .hamburger-menu {
   position: absolute;
-  right: 10px;
-  top: 30px;
+  right: 20px;
+  top: 25px;
 
   width: 40px;
   height: 40px;
@@ -147,7 +147,7 @@ export default {
 .insta-icon {
   position: absolute;
   left: 30px;
-  top: 35px;
+  top: 30px;
   width: 40px;
   height: 40px;
   cursor: pointer;
