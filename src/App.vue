@@ -20,10 +20,8 @@ export default {
 </script>
 
 <style>
-html {
-  overflow-x: hidden;
-}
-body {
+#app {
+  background-color: #000000;
   font-family: futura-pt, sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -40,6 +38,9 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  overflow-x: hidden;
+}
+html {
   overflow-x: hidden;
 }
 </style>
